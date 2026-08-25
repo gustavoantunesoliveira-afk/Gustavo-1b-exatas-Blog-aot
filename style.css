@@ -1,1 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family:
+        'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+}
+
+
+body {
+    background:
+        #23351d
+        url('https://static.wikia.nocookie.net/shingekinokyojin/images/c/c9/The_Forest_of_the_Giant_Trees.png/revision/latest?cb=20130811103348')
+        no-repeat
+        center
+        center
+        fixed;
+
+    background-size: cover;
+
+    color: #2e3323;
+
+    line-height: 1.7;
+}
+
+
+.overlay {
+    background-color: rgba(18, 31, 15, 0.65);
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+}
+
+
+.container {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    background: rgba(244, 247, 238, 0.92);
+
+    border-radius: 12px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5);
+
+    border: 2px solid #556b2f;
+}
+
+
+header {
+    text-align: center;
+
+    border-bottom: 2px solid #6b8e23;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+header h1 {
+    color: #2d421e;
+
+    font-size: 2.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+header p {
+    color: #4a5d31;
+
+    font-style: italic;
+
+    font-size: 1.1rem;
+}
+
+
+.article-section {
+    margin-bottom: 40px;
+}
+
+
+h2 {
+    color: #385127;
+
+    font-size: 1.8rem;
+
+    margin-bottom: 15px;
+
+    border-left: 5px solid #6b8e23;
+
+    padding-left: 10px;
+}
+
+
+p {
+    margin-bottom: 15px;
+
+    text-align: justify;
+
+    font-size: 1.05rem;
+}
+
+
+.img-container {
+    text-align: center;
+
+    margin: 25px 0;
+}
+
+
+.img-container img {
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 8px;
+
+    border: 3px solid #4a5d31;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.img-caption {
+    font-size: 0.9rem;
+
+    color: #556b2f;
+
+    margin-top: 8px;
+
+    font-style: italic;
+}
+
+
+.highlight-box {
+    background-color: rgba(107, 142, 35, 0.15);
+
+    border-left: 4px solid #385127;
+
+    padding: 15px;
+
+    margin: 20px 0;
+
+    border-radius: 0 8px 8px 0;
+}
+
+
+/* =========================
+   BOTÃO DE LIKE
+   ========================= */
+
+.like-container {
+    text-align: center;
+
+    margin: 30px auto 10px auto;
+
+    padding-top: 20px;
+
+    border-top: 1px dashed #a3b88c;
+}
+
+
+.like-btn {
+    background-color: #556b2f;
+
+    color: #ffffff;
+
+    border: 2px solid #385127;
+
+    padding: 12px 24px;
+
+    font-size: 1.05rem;
+
+    font-weight: bold;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.2);
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.like-btn:hover {
+    background-color: #6b8e23;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+.like-btn:active {
+    transform: translateY(0);
+}
+
+
+.like-btn.curtido {
+    background-color: #2e3323;
+
+    border-color: #1a2014;
+}
+
+
+.like-count {
+    background: rgba(255, 255, 255, 0.25);
+
+    padding: 2px 8px;
+
+    border-radius: 12px;
+
+    font-size: 0.95rem;
+}
+
+
+footer {
+    text-align: center;
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #a3b88c;
+
+    color: #4a5d31;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .overlay {
+        padding: 20px 10px;
+    }
+
+    .container {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.45rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .like-btn {
+        padding: 10px 20px;
+    }
+}
 
