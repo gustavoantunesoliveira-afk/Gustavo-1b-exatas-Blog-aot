@@ -1,40 +1,87 @@
-<script>
-    let likes = parseInt(localStorage.getItem('aot_blog_likes')) || 0;
-    let jaCurtiu = localStorage.getItem('aot_blog_has_liked') === 'true';
+// Recupera a quantidade de curtidas salva no navegador
+let likes = parseInt(
+    localStorage.getItem('aot_blog_likes')
+) || 0;
 
-    const btn = document.getElementById('btnLike');
-    const countDisplay = document.getElementById('countDisplay');
-    const likeIcon = document.getElementById('likeIcon');
-    const btnText = document.getElementById('btnText');
 
-    function atualizarInterface() {
-        countDisplay.textContent = likes;
-        if (jaCurtiu) {
-            btn.classList.add('curtido');
-            likeIcon.textContent = '💚';
-            btnText.textContent = 'Curtido';
-        } else {
-            btn.classList.remove('curtido');
-            likeIcon.textContent = '👍';
-            btnText.textContent = 'Curtir';
-        }
+// Verifica se o usuário já curtiu
+let jaCurtiu =
+    localStorage.getItem('aot_blog_has_liked') === 'true';
+
+
+// Elementos do HTML
+const btn = document.getElementById('btnLike');
+
+const countDisplay =
+    document.getElementById('countDisplay');
+
+const likeIcon =
+    document.getElementById('likeIcon');
+
+const btnText =
+    document.getElementById('btnText');
+
+
+// Atualiza a aparência do botão
+function atualizarInterface() {
+
+    countDisplay.textContent = likes;
+
+    if (jaCurtiu) {
+
+        btn.classList.add('curtido');
+
+        likeIcon.textContent = '💚';
+
+        btnText.textContent = 'Curtido';
+
+    } else {
+
+        btn.classList.remove('curtido');
+
+        likeIcon.textContent = '👍';
+
+        btnText.textContent = 'Curtir';
+    }
+}
+
+
+// Função executada quando o botão é clicado
+function toggleLike() {
+
+    if (!jaCurtiu) {
+
+        // Adiciona uma curtida
+        likes++;
+
+        jaCurtiu = true;
+
+    } else {
+
+        // Remove a curtida
+        likes = Math.max(0, likes - 1);
+
+        jaCurtiu = false;
     }
 
-    function toggleLike() {
-        if (!jaCurtiu) {
-            likes++;
-            jaCurtiu = true;
-        } else {
-            likes = Math.max(0, likes - 1);
-            jaCurtiu = false;
-        }
 
-        localStorage.setItem('aot_blog_likes', likes);
-        localStorage.setItem('aot_blog_has_liked', jaCurtiu);
+    // Salva os dados no navegador
+    localStorage.setItem(
+        'aot_blog_likes',
+        likes
+    );
 
-        atualizarInterface();
-    }
+    localStorage.setItem(
+        'aot_blog_has_liked',
+        jaCurtiu
+    );
 
-    // Inicializa o botão no estado correto
+
+    // Atualiza o botão
     atualizarInterface();
-</script>
+}
+
+
+// Inicializa o botão
+// quando a página é carregada
+atualizarInterface();
